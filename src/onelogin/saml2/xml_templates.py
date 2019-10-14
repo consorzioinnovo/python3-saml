@@ -29,7 +29,9 @@ class OneLogin_Saml2_Templates(object):
   Destination="%(destination)s"
   ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
   AssertionConsumerServiceURL="%(assertion_url)s"%(attr_consuming_service_str)s>
-    <saml:Issuer>%(entity_id)s</saml:Issuer>%(subject_str)s%(nameid_policy_str)s
+    <saml:Issuer
+      Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
+      NameQualifier="%(entity_id)s">%(entity_id)s</saml:Issuer>%(subject_str)s%(nameid_policy_str)s
 %(requested_authn_context_str)s
 </samlp:AuthnRequest>"""
 
